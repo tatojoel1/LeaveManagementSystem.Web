@@ -1,6 +1,7 @@
 using LeaveManagementSystem.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+#region AutoMapper Service
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+#endregion
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
