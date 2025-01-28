@@ -3,6 +3,7 @@ using System;
 using LeaveManagementSystem.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LeaveManagementSystem.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250123211744_ExtendedUsersTable")]
+    partial class ExtendedUsersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,7 +104,7 @@ namespace LeaveManagementSystem.Web.Migrations
                         {
                             Id = "7c433a0b-d3b7-49f8-a475-bd9d523ba3e4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "87635785-f793-4aa2-b57d-4da599e9a152",
+                            ConcurrencyStamp = "56e74e41-c6fc-408f-957d-815e490b515f",
                             DateOfBirth = new DateOnly(1992, 6, 11),
                             Email = "admin@localhost.com",
                             EmailConfirmed = true,
@@ -110,9 +113,9 @@ namespace LeaveManagementSystem.Web.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCAlHOST.COM",
                             NormalizedUserName = "ADMIN@LOCAlHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEF0cXqeMTDokA7vSgWoPjRTmPT/BgWhKMbflScBelOdtIadI0Js5d5UhsfP46I8gbg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAZb/pglcV7NB8OxFkvxF3U6ZAjuz+tcDgTgJ7DMb95OqAOxepSvw5luCiNCIquxiQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "edf73637-2f9e-4fd2-823a-b39f2b3d7489",
+                            SecurityStamp = "eb185ec9-534b-4c85-bef6-09a8e27de347",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost.com"
                         });
@@ -276,11 +279,6 @@ namespace LeaveManagementSystem.Web.Migrations
                         new
                         {
                             UserId = "7c433a0b-d3b7-49f8-a475-bd9d523ba3e4",
-                            RoleId = "b02c3aef-9985-4eca-9283-77040111df04"
-                        },
-                        new
-                        {
-                            UserId = "6e08019a-d183-4095-9b34-3f933d35590f",
                             RoleId = "b02c3aef-9985-4eca-9283-77040111df04"
                         });
                 });
