@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using LeaveManagementSystem.Web.Data;
 using LeaveManagementSystem.Web.Models.LeaveTypes;
 using Microsoft.EntityFrameworkCore;
 
-namespace LeaveManagementSystem.Web.Services;
+namespace LeaveManagementSystem.Web.Services.LeaveTypes;
 
 public class LeaveTypesService(ApplicationDbContext _context, IMapper _mapper) : ILeaveTypesService
 {

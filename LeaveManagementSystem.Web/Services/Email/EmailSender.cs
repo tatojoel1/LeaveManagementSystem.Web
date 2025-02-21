@@ -1,7 +1,7 @@
 ﻿
 using System.Net.Mail;
 
-namespace LeaveManagementSystem.Web.Services
+namespace LeaveManagementSystem.Web.Services.Email
 {
     public class EmailSender(IConfiguration _configuration) : IEmailSender
     {
@@ -10,7 +10,7 @@ namespace LeaveManagementSystem.Web.Services
         {
             var fromAddress = _configuration["EmailSettings:DefaultEmailAddress"];
             var smtpServer = _configuration["EmailSettings:Server"];
-            var smtpPort = Int32.Parse(_configuration["EmailSettings:Port"]!);
+            var smtpPort = int.Parse(_configuration["EmailSettings:Port"]!);
             var message = new MailMessage
             {
                 From = new MailAddress(fromAddress!),
